@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-
+from reportlab.pdfgen import canvas
 
 def operacion():
 
@@ -31,6 +31,11 @@ def operacion():
     r1.config(state=DISABLED)
     r2.config(state=DISABLED)
 
+#pip install reportlab
+def generaPDF()
+    c = canvas.Canvas("hola-mundo.pdf")
+    c.save()
+    c.drawString(50, 50, "¡Hola, mundo!")
 
 
 ventana = Tk()
