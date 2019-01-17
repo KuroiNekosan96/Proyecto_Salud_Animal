@@ -1,6 +1,6 @@
 from tkinter import *
 
-
+#solo adjunte un método de prueba si es de ser necesario cambiarlo
 def operacion():
     numero=num.get()
     if opcion.get()==1:
@@ -11,7 +11,7 @@ def operacion():
     else:
         print("No ha elegido nada")
 
-
+#Aqui empieza la interfaz del programa por favor empezar añadiendo más cosas para el diseño
 
 ventana = Tk()
 opcion=IntVar()
