@@ -13,8 +13,6 @@ def operacion():
 
 
 
-
-
 ventana = Tk()
 opcion=IntVar()
 num=IntVar()
