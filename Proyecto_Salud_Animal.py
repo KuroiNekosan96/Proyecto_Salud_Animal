@@ -7,7 +7,7 @@ def operacion():
     r = Label(ventana, text="Ingrese el peso del animalito:").place(x=20, y=180)
     r1 = Entry(ventana, textvariable=peso).place(x=180, y=180)
     r2 = Label(ventana, text="Escoga la enfermedad: ").place(x=20, y=200)
-    combo = ttk.Combobox(ventana)
+    combo = ttk.Combobox(ventana,state="readonly")
     r= ttk.Combobox(ventana)
     combo.place(x=180, y=200)
     combo['values'] = (
