@@ -4,14 +4,14 @@ from PIL import ImageTk,Image
 #from reportlab.pdfgen import canvas
 
 def operacion():
-    r = Label(ventana, text="Ingrese el peso del animalito:").place(x=20, y=180)
+    r = Label(ventana, text="Ingrese el peso de la mascota:").place(x=20, y=180)
     r1 = Entry(ventana, textvariable=peso).place(x=180, y=180)
     r2 = Label(ventana, text="Escoga la enfermedad: ").place(x=20, y=200)
     combo = ttk.Combobox(ventana,state="readonly")
     r= ttk.Combobox(ventana)
     combo.place(x=180, y=200)
     combo['values'] = (
-    'Seleccione', '1-Boquillo', '2-Rabia', '3-Gripe')
+    'Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion')
     combo.current(0)
 
     numero=num.get()
@@ -24,9 +24,10 @@ def operacion():
 
     if opcion.get()==3:
         animal="Canario"
+        print("Ha elegido Canario")
     elif opcion.get()==4:
         animal="Hamster"
-        print(animal)
+        print("Ha elegido Hamster")
     r.config(state=DISABLED)
 
 
