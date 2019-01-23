@@ -46,7 +46,7 @@ animal=StringVar()
 peso=StringVar()
 ventana.title("Salud Animal")
 ventana.geometry("830x400")
-
+ventana.maxsize(height=400,width=830)
 #Código para cargar imagen utilizando Pil
 img = ImageTk.PhotoImage(Image.open("fondoanimales.jpg"))
 l=Label(image=img)
