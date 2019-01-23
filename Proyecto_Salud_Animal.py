@@ -8,6 +8,7 @@ def operacion():
     r1 = Entry(ventana, textvariable=peso).place(x=180, y=180)
     r2 = Label(ventana, text="Escoga la enfermedad: ").place(x=20, y=200)
     combo = ttk.Combobox(ventana)
+    r= ttk.Combobox(ventana)
     combo.place(x=180, y=200)
     combo['values'] = (
     'Seleccione', '1-Boquillo', '2-Rabia', '3-Gripe')
@@ -28,9 +29,7 @@ def operacion():
         print(animal)
     r.config(state=DISABLED)
 
-    combo.config(state=DISABLED)
-    r1.config(state=DISABLED)
-    r2.config(state=DISABLED)
+
 
 #pip install reportlab
 def generaPDF():
