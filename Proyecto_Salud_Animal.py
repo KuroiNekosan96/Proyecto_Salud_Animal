@@ -45,7 +45,7 @@ num=IntVar()
 animal=StringVar()
 peso=StringVar()
 ventana.title("Salud Animal")
-ventana.geometry("500x500")
+ventana.geometry("830x400")
 
 #Código para cargar imagen utilizando Pil
 img = ImageTk.PhotoImage(Image.open("fondoanimales.jpg"))
