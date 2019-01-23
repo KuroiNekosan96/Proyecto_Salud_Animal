@@ -48,7 +48,7 @@ ventana.title("Salud Animal")
 ventana.geometry("500x500")
 
 #Código para cargar imagen utilizando Pil
-img = ImageTk.PhotoImage(Image.open("170511.jpg"))
+img = ImageTk.PhotoImage(Image.open("fondoanimales.jpg"))
 l=Label(image=img)
 l.pack()
 
