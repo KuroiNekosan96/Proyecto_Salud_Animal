@@ -1,18 +1,23 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk,Image
+from tkinter import font
+
 #from reportlab.pdfgen import canvas
 
 def operacion():
-    r = Label(ventana, text="Ingrese el peso de la mascota:").place(x=20, y=180)
-    r1 = Entry(ventana, textvariable=peso).place(x=180, y=180)
-    r2 = Label(ventana, text="Escoga la enfermedad: ").place(x=20, y=200)
+    colorFondo = "White"
+    Helvifont = font.Font(family="Helvetica", size=10, weight="bold")
+    r = Label(ventana, text="Ingrese el peso de la mascota: ",bg=colorFondo,font=Helvifont).place(x=20, y=250)
+    r1 = Entry(ventana, textvariable=peso,font=Helvifont).place(x=230, y=250)
+    r2 = Label(ventana, text="Escoga la enfermedad: ",bg=colorFondo,font=Helvifont).place(x=20, y=300)
     combo = ttk.Combobox(ventana,state="readonly")
     r= ttk.Combobox(ventana)
-    combo.place(x=180, y=200)
+    combo.place(x=230, y=300)
     combo['values'] = (
     'Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion')
     combo.current(0)
+    boton = Button(ventana, text="Enviar Resultados", command=operacion, bg=colorFondo, font=Hefont).place(x=20, y=335)
 
     numero=num.get()
     if opcion.get()==1:
@@ -44,20 +49,24 @@ opcion=IntVar()
 num=IntVar()
 animal=StringVar()
 peso=StringVar()
-ventana.title("Salud Animal")
+ventana.title("Salud Animal CRYP")
 ventana.geometry("830x400")
 ventana.maxsize(height=400,width=830)
 #Código para cargar imagen utilizando Pil
-img = ImageTk.PhotoImage(Image.open("fondoanimales.jpg"))
+img = ImageTk.PhotoImage(Image.open("fondoanimal.jpg"))
 l=Label(image=img)
 l.pack()
 
-etiquetaTitulo = Label(ventana, text="Salud Animal").place(x=120, y=10)
+colorFondo="White"
+Helvfont=font.Font(family="Helvetica",size=30,weight="bold")
+etiquetaTitulo = Label(ventana, text="Salud Animal",font=Helvfont,bg=colorFondo).place(x=120, y=10)
 
-etiqueta1=Label(ventana, text="Elige tu opción").place(x=20,y=50)
-xGato=Radiobutton(ventana, text="Gato", value=1, variable=opcion).place(x=20,y=80)
-xPerro=Radiobutton(ventana, text="Perro", value=2, variable=opcion).place(x=70,y=80)
-xCanarios=Radiobutton(ventana, text="Canarios", value=3, variable=opcion).place(x=20,y=100)
-xhamster=Radiobutton(ventana, text="Hamster", value=4, variable=opcion).place(x=110,y=100)
-boton=Button(ventana,text="Aceptar",command=operacion).place(x=20,y=140)
+Helfont=font.Font(family="Helvetica",size=10,weight="bold")
+etiqueta1=Label(ventana, text="Elige tu opción",bg=colorFondo,font=Helfont).place(x=20,y=80)
+xGato=Radiobutton(ventana, text="Gato", value=1, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=120)
+xPerro=Radiobutton(ventana, text="Perro", value=2, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=120)
+xCanarios=Radiobutton(ventana, text="Canarios", value=3, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=150)
+xhamster=Radiobutton(ventana, text="Hamster", value=4, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=150)
+Hefont=font.Font(family="Helvetica",size=10,weight="bold")
+boton=Button(ventana,text="Aceptar",command=operacion,bg=colorFondo,font=Hefont).place(x=20,y=200)
 ventana.mainloop()
