@@ -2,6 +2,11 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk,Image
 from tkinter import font
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import A4, letter
+#pip install reportlab
+
+
 
 #from reportlab.pdfgen import canvas
 
@@ -60,6 +65,12 @@ l.pack()
 colorFondo="White"
 Helvfont=font.Font(family="Helvetica",size=30,weight="bold")
 etiquetaTitulo = Label(ventana, text="Salud Animal",font=Helvfont,bg=colorFondo).place(x=120, y=10)
+#creacion del pdf
+w, h = A4
+c = canvas.Canvas("prueba.pdf", pagesize=A4)
+c.drawString(50, h - 50, "¡Primer PDF!")
+c.showPage()
+c.save()
 
 Helfont=font.Font(family="Helvetica",size=10,weight="bold")
 etiqueta1=Label(ventana, text="Elige tu opción",bg=colorFondo,font=Helfont).place(x=20,y=80)
