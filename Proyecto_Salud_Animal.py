@@ -6,24 +6,21 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4, letter
 
 
+#Metodo para limpiar variables
+def newFile():
+    opcion.set("")
 
 
-#from reportlab.pdfgen import canvas
 
-def donothing():
-    x=0
+    # creacion del pdf
+    w, h = A4
+    c = canvas.Canvas("prueba.pdf", pagesize=A4)
+    c.drawString(50, h - 50, "¡Primer PDF!")
+    c.showPage()
+    #c.save()
 
 
 def operacion():
-
-    def creaPDF():
-        # creacion del pdf
-        w, h = A4
-        c = canvas.Canvas("prueba.pdf", pagesize=A4)
-        c.drawString(50, h - 50, "¡Primer PDF!")
-        c.showPage()
-        c.save()
-
     colorFondo = "White"
     Helvifont = font.Font(family="Helvetica", size=10, weight="bold")
     r = Label(ventana, text="Ingrese el peso de la mascota: ",bg=colorFondo,font=Helvifont).place(x=20, y=250)
@@ -35,7 +32,7 @@ def operacion():
     combo['values'] = (
     'Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion')
     combo.current(0)
-    boton = Button(ventana, text="Enviar Resultados", command=creaPDF, bg=colorFondo, font=Hefont).place(x=20, y=335)
+    boton = Button(ventana, text="Enviar Resultados", command=operacion, bg=colorFondo, font=Hefont).place(x=20, y=335)
 
     numero=num.get()
     if opcion.get()==1:
@@ -52,6 +49,7 @@ def operacion():
         animal="Hamster"
         print("Ha elegido Hamster")
     r.config(state=DISABLED)
+
 
 
 
@@ -86,8 +84,7 @@ l.pack()
 
 menubar=Menu(ventana)
 filemenu=Menu(menubar,tearoff=0)
-filemenu.add_command(label="New",command=donothing)
-filemenu.add_command(label="Open",command=donothing)
+filemenu.add_command(label="New",command=newFile)
 filemenu.add_command(label="Exit",command=ventana.quit)
 menubar.add_cascade(label="File",men=filemenu)
 
