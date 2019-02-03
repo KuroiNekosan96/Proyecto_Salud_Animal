@@ -25,7 +25,7 @@ def operacion():
     Helvifont = font.Font(family="Helvetica", size=10, weight="bold")
     r = Label(ventana, text="Peso de la mascota en Kg: ",bg=colorFondo,font=Helvifont).place(x=20, y=250)
     r1 = Entry(ventana, textvariable=peso,font=Helvifont).place(x=230, y=250)
-    r2 = Label(ventana, text="Escoga la enfermedad: ",bg=colorFondo,font=Helvifont).place(x=20, y=300)
+    r2 = Label(ventana, text="Elija la enfermedad: ",bg=colorFondo,font=Helvifont).place(x=20, y=300)
     combo = ttk.Combobox(ventana,state="readonly")
     r= ttk.Combobox(ventana)
     combo.place(x=230, y=300)
