@@ -5,25 +5,25 @@ from tkinter import font
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4, letter
 
-import sys
-from PyQt5.QtWidgets import QApplication,QMainWindow,QAction,QMessageBox
-from PyQt5 import uic
-from PyQt5.QtGui import QIcon
 
-#metodo para la barra de tareas
-class Window(QMainWindow):
-    def __init__(self):
-        QMainWindow.__init__(self)
-        self.resize(800,500)
-        self.statusBar().showMessage("Bienvenid@")
-        menu=self.menuBar()
-        menu_archivo=menu.addMenu("&Archivo")
-        menu_edit=menu.addMenu("&Editar")
 
 
 #from reportlab.pdfgen import canvas
 
+def donothing():
+    x=0
+
+
 def operacion():
+
+    def creaPDF():
+        # creacion del pdf
+        w, h = A4
+        c = canvas.Canvas("prueba.pdf", pagesize=A4)
+        c.drawString(50, h - 50, "¡Primer PDF!")
+        c.showPage()
+        c.save()
+
     colorFondo = "White"
     Helvifont = font.Font(family="Helvetica", size=10, weight="bold")
     r = Label(ventana, text="Ingrese el peso de la mascota: ",bg=colorFondo,font=Helvifont).place(x=20, y=250)
@@ -35,7 +35,7 @@ def operacion():
     combo['values'] = (
     'Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion')
     combo.current(0)
-    boton = Button(ventana, text="Enviar Resultados", command=operacion, bg=colorFondo, font=Hefont).place(x=20, y=335)
+    boton = Button(ventana, text="Enviar Resultados", command=creaPDF, bg=colorFondo, font=Hefont).place(x=20, y=335)
 
     numero=num.get()
     if opcion.get()==1:
@@ -55,11 +55,14 @@ def operacion():
 
 
 
+
+
+
 #pip install reportlab
-def generaPDF():
+'''def generaPDF():
     c = canvas.Canvas("hola-mundo.pdf")
     c.save()
-    c.drawString(50, 50, "¡Hola, mundo!")
+    c.drawString(50, 50, "¡Hola, mundo!")'''
 
 #Aqui inicia la interfaz
 ventana = Tk()
@@ -69,10 +72,7 @@ animal=StringVar()
 peso=StringVar()
 
 #Aqui inicia para la barra de herramientas
-app=QApplication(sys.argv)
-window=Window()
-window.show()
-app.exec_()
+
 
 ventana.title("Salud Animal CRYP")
 ventana.geometry("830x400")
@@ -82,15 +82,21 @@ img = ImageTk.PhotoImage(Image.open("fondoanimal.jpg"))
 l=Label(image=img)
 l.pack()
 
+
+
+menubar=Menu(ventana)
+filemenu=Menu(menubar,tearoff=0)
+filemenu.add_command(label="New",command=donothing)
+filemenu.add_command(label="Open",command=donothing)
+filemenu.add_command(label="Exit",command=ventana.quit)
+menubar.add_cascade(label="File",men=filemenu)
+
+
 colorFondo="White"
 Helvfont=font.Font(family="Helvetica",size=30,weight="bold")
 etiquetaTitulo = Label(ventana, text="Salud Animal",font=Helvfont,bg=colorFondo).place(x=120, y=10)
-#creacion del pdf
-w, h = A4
-c = canvas.Canvas("prueba.pdf", pagesize=A4)
-c.drawString(50, h - 50, "¡Primer PDF!")
-c.showPage()
-c.save()
+
+
 
 Helfont=font.Font(family="Helvetica",size=10,weight="bold")
 
@@ -101,4 +107,6 @@ xCanarios=Radiobutton(ventana, text="Canarios", value=3, variable=opcion,bg=colo
 xhamster=Radiobutton(ventana, text="Hamster", value=4, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=150)
 Hefont=font.Font(family="Helvetica",size=10,weight="bold")
 boton=Button(ventana,text="Aceptar",command=operacion,bg=colorFondo,font=Hefont).place(x=20,y=200)
+
+ventana.config(menu=menubar)
 ventana.mainloop()
