@@ -7,26 +7,30 @@ from reportlab.lib.pagesizes import A4, letter
 
 def donothing():
     print("0")
-#Metodo para guardar variables falta la del combo
-def guardar():
-    animal=opcion.get();
-    peso=r.get();
-    edad=r2.get();
 
+def mostrarManual():
+    ventana2 = Tk()
+    ventana2.title("Salud Animal CRYP-Manual de Uso")
+    ventana2.geometry("370x370")
+    etiqueta2 = Label(ventana2, text="1.-Elegir una entre las cuatro opciones").place(x=80, y=80)
+    etiqueta3 = Label(ventana2, text="2.-Dar Clic en aceptar, se desplegará más opciones").place(x=80, y=120)
+    etiqueta4 = Label(ventana2, text="3.-Ingresar el peso de la mascota en gramos").place(x=80, y=160)
+    etiqueta5 = Label(ventana2, text="4.-Elegir una de las enfermedades especificadas").place(x=80, y=200)
+    etiqueta6 = Label(ventana2, text="5.-Ingresar la edad del perro").place(x=80, y=240)
+    etiqueta7 = Label(ventana2, text="6.-Dar clic en enviar resultados").place(x=80, y=280)
+    ventana2.mainloop()
 
 def operacion():
     colorFondo = "White"
     Helvifont = font.Font(family="Helvetica", size=10, weight="bold")
-    r = Label(ventana, text="Ingrese el peso de la mascota: ",bg=colorFondo,font=Helvifont).place(x=20, y=250)
+    r = Label(ventana, text="Peso de la mascota en Kg: ",bg=colorFondo,font=Helvifont).place(x=20, y=250)
     r1 = Entry(ventana, textvariable=peso,font=Helvifont).place(x=230, y=250)
-    r2 = Label(ventana, text="Escoga la enfermedad: ",bg=colorFondo,font=Helvifont).place(x=20, y=300)
-
+    r2 = Label(ventana, text="Elija la enfermedad: ",bg=colorFondo,font=Helvifont).place(x=20, y=300)
     combo = ttk.Combobox(ventana,state="readonly")
     r= ttk.Combobox(ventana)
     combo.place(x=230, y=300)
-    combo['values'] = ('Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion')
-    combo.current(0)
-
+    combo['values'] = (
+    'Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion','5-Infección por Campylobacter','6-La toxoplasmosis','7-La tiña')
     etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
     ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
     boton = Button(ventana, text="Enviar Resultados", command=operacion, bg=colorFondo, font=Hefont).place(x=20, y=370)
@@ -101,7 +105,7 @@ filemenu.add_command(label="New",command=donothing)
 filemenu.add_command(label="Exit",command=ventana.quit)
 
 menubar.add_cascade(label="Informacion",men=filemenu1)
-filemenu1.add_command(label="Manual",command=donothing)
+filemenu1.add_command(label="Manual",command=mostrarManual)
 
 
 colorFondo="White"
@@ -115,8 +119,8 @@ Helfont=font.Font(family="Helvetica",size=10,weight="bold")
 etiqueta1=Label(ventana, text="Elige tu opción",bg=colorFondo,font=Helfont).place(x=20,y=80)
 xGato=Radiobutton(ventana, text="Gato", value=1, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=120)
 xPerro=Radiobutton(ventana, text="Perro", value=2, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=120)
-xCanarios=Radiobutton(ventana, text="Canarios", value=3, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=150)
-xhamster=Radiobutton(ventana, text="Hamster", value=4, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=150)
+#xCanarios=Radiobutton(ventana, text="Canarios", value=3, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=150)
+#xhamster=Radiobutton(ventana, text="Hamster", value=4, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=150)
 Hefont=font.Font(family="Helvetica",size=10,weight="bold")
 boton=Button(ventana,text="Aceptar",command=operacion,bg=colorFondo,font=Hefont).place(x=20,y=200)
 
