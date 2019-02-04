@@ -2,8 +2,10 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk,Image
 from tkinter import font
-from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4, letter
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+import time
 
 def donothing():
     print("0")
@@ -68,20 +70,33 @@ def operacion():
 
 
  # creacion del pdf
-w, h = A4
-c = canvas.Canvas("prueba.pdf", pagesize=A4)
-c.drawString(50, h - 50, "¡Primer PDF!")
-c.showPage()
+#w, h = A4
+#c = canvas.Canvas("prueba.pdf", pagesize=A4)
+#c.drawString(50, h - 50, "¡Primer PDF!")
+#c.showPage()
 #c.save()
 
 
 
 
 #pip install reportlab
-'''def generaPDF():
-    c = canvas.Canvas("hola-mundo.pdf")
-    c.save()
-    c.drawString(50, 50, "¡Hola, mundo!")'''
+#--------Encabezado...... PDF..............
+canvas = canvas.Canvas("form.pdf", pagesize=letter)
+canvas.setLineWidth(.3)
+canvas.setFont('Helvetica', 12)
+
+canvas.drawString(270, 750, 'SALUD ANIMAL')
+canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+canvas.line(500, 715, 585, 715)
+canvas.drawString(30, 690, 'Telefono: 2345678')
+
+canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:')
+
+canvas.line(20, 50, 580, 50)
+
+canvas.save()
+#...............-------------------------.................................
 
 #Aqui inicia la interfaz
 #Variables Globales
