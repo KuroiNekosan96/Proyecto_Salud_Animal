@@ -48,24 +48,26 @@ def guardar():
 
 
 def operacion():
-    colorFondo = "White"
-    Helvifont = font.Font(family="Helvetica", size=10, weight="bold")
-    r = Label(ventana, text="Peso de la mascota en Kg: ",bg=colorFondo,font=Helvifont).place(x=20, y=250)
-    r1 = Entry(ventana, textvariable=peso,font=Helvifont).place(x=230, y=250)
-    r2 = Label(ventana, text="Elija la enfermedad: ",bg=colorFondo,font=Helvifont).place(x=20, y=300)
-    combo = ttk.Combobox(ventana,state="readonly")
-    r= ttk.Combobox(ventana)
-    combo.place(x=230, y=300)
-    combo['values'] = (
-    'Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion','5-Infección por Campylobacter','6-La toxoplasmosis','7-La tiña')
-    etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
-    ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
-    boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20, y=370)
+
 
 
     if opcion.get()==1:
         animal="Gato"
         print("Ha elegido gato")
+        colorFondo = "White"
+        Helvifont = font.Font(family="Helvetica", size=10, weight="bold")
+        r = Label(ventana, text="Peso de la mascota en Kg: ", bg=colorFondo, font=Helvifont).place(x=20, y=250)
+        r1 = Entry(ventana, textvariable=peso, font=Helvifont).place(x=230, y=250)
+        r2 = Label(ventana, text="Elija la enfermedad: ", bg=colorFondo, font=Helvifont).place(x=20, y=300)
+        combo = ttk.Combobox(ventana, state="readonly")
+        r = ttk.Combobox(ventana)
+        combo.place(x=230, y=300)
+        combo['values'] = (            'Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion', '5-Infección por Campylobacter',
+            '6-La toxoplasmosis', '7-La tiña')
+        etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
+        ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
+        boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20,y=370)
+        r.config(state=DISABLED)
 
     elif opcion.get()==2:
         animal="Perro"
@@ -77,7 +79,7 @@ def operacion():
     elif opcion.get()==4:
         animal="Hamster"
         print("Ha elegido Hamster")
-    r.config(state=DISABLED)
+
 
 #--------Encabezado...... PDF..............
 canvas = canvas.Canvas("form.pdf", pagesize=letter)
@@ -146,7 +148,7 @@ Helfont=font.Font(family="Helvetica",size=10,weight="bold")
 etiqueta1=Label(ventana, text="Elige tu opción",bg=colorFondo,font=Helfont).place(x=20,y=80)
 xGato=Radiobutton(ventana, text="Gato", value=1, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=120)
 xPerro=Radiobutton(ventana, text="Perro", value=2, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=120)
-xCanarios=Radiobutton(ventana, text="Canarios", value=3, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=150)
+xTortugas=Radiobutton(ventana, text="Tortugas", value=3, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=150)
 xhamster=Radiobutton(ventana, text="Hamster", value=4, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=150)
 Hefont=font.Font(family="Helvetica",size=10,weight="bold")
 boton=Button(ventana,text="Aceptar",command=operacion,bg=colorFondo,font=Hefont).place(x=20,y=200)
