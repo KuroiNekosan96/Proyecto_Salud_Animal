@@ -2,11 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk,Image
 from tkinter import font
-import tkinter as tk
-from reportlab.lib.pagesizes import A4, letter
-from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-import time
+from reportlab.lib.pagesizes import A4, letter
 
 def donothing():
     print("0")
@@ -16,20 +13,6 @@ def newFile():
     opcion.set("")
     peso.set("")
     edad.set("")
-
-
-def abrirventana2():
-    ventana.withdraw()
-    win=tk.Toplevel()
-    win.geometry('380x300')
-    win.configure(background='dark turquoise')
-    e3=tk.Label(win,text="Bienvenido Salud Animal CRYP")
-    e3.pack(padx=5,pady=5,ipadx=5,ipady=5,fill=tk.X)
-    boton3=Button(win,text='OK',command=win.destroy)
-    boton3.pack(side=tk.TOP)
-
-def cerrarVentana():
-    ventana.destroy()
 
 def mostrarManual():
     ventana2 = Tk()
@@ -63,7 +46,7 @@ def operacion():
     'Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion','5-Infección por Campylobacter','6-La toxoplasmosis','7-La tiña')
     etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
     ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
-    boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20, y=370)
+    boton = Button(ventana, text="Enviar Resultados", command=operacion, bg=colorFondo, font=Hefont).place(x=20, y=370)
 
 
     if opcion.get()==1:
@@ -85,33 +68,20 @@ def operacion():
 
 
  # creacion del pdf
-#w, h = A4
-#c = canvas.Canvas("prueba.pdf", pagesize=A4)
-#c.drawString(50, h - 50, "¡Primer PDF!")
-#c.showPage()
+w, h = A4
+c = canvas.Canvas("prueba.pdf", pagesize=A4)
+c.drawString(50, h - 50, "¡Primer PDF!")
+c.showPage()
 #c.save()
 
 
 
 
 #pip install reportlab
-#--------Encabezado...... PDF..............
-canvas = canvas.Canvas("form.pdf", pagesize=letter)
-canvas.setLineWidth(.3)
-canvas.setFont('Helvetica', 12)
-
-canvas.drawString(270, 750, 'SALUD ANIMAL')
-canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
-canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
-canvas.line(500, 715, 585, 715)
-canvas.drawString(30, 690, 'Telefono: 2345678')
-
-canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:')
-
-canvas.line(20, 50, 580, 50)
-
-canvas.save()
-#...............-------------------------.................................
+'''def generaPDF():
+    c = canvas.Canvas("hola-mundo.pdf")
+    c.save()
+    c.drawString(50, 50, "¡Hola, mundo!")'''
 
 #Aqui inicia la interfaz
 #Variables Globales
