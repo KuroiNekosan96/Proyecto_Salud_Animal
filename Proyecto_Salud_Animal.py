@@ -514,14 +514,14 @@ filemenu=Menu(menubar,tearoff=0)
 filemenu1=Menu(menubar,tearoff=0)
 filemenu3=Menu(menubar,tearoff=0)
 menubar.add_cascade(label="Menú",men=filemenu)
-filemenu.add_command(label="New",command=newFile)
+filemenu.add_command(label="Limpiar",command=newFile)
 filemenu.add_command(label="Exit",command=ventana.quit)
 
-menubar.add_cascade(label="Informacion",men=filemenu1)
+menubar.add_cascade(label="Información",men=filemenu1)
 filemenu1.add_command(label="Manual",command=mostrarManual)
 
 menubar.add_cascade(label="Desarrolladores",men=filemenu3)
-filemenu3.add_command(label="ver",command=mostrarequipo)
+filemenu3.add_command(label="Ver",command=mostrarequipo)
 
 colorFondo="White"
 Helvfont=font.Font(family="Helvetica",size=30,weight="bold")
