@@ -26,7 +26,7 @@ def crearpdf():
             canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
             canvas.line(500, 715, 585, 715)
             canvas.drawString(30, 690, 'Telefono: 2345678')
-
+            canvas.drawString(220, 670, 'DETALLES DE LA MEDICACIÓN:OTITIS')
             canvas.drawString(30, 660, "Tipo de Animal: " + mascota)
             canvas.drawString(30, 630, "Edad del Animal: " + str(edad.get()))
 
@@ -193,11 +193,11 @@ def crearpdf():
             canvas.drawString(30, 580,
                               '-Intentar que el animal coma y beba (y si no, recurrir a fluidoterapia adecuada).')
             canvas.drawString(30, 560,
-                              'Los perros infectados y los perros que hayan estado en contacto con ellos deben permanecer aislados de otros perros sensibles ')
+                              'Los perros infectados y los perros que hayan estado en contacto con ellos deben permanecer aislados de otros perros')
             canvas.drawString(30, 550,
-                              'y es preciso adoptar medidas de higiene para evitar la propagación de la enfermedad (cambio de ropa de las personas en contacto')
+                              'y es preciso adoptar medidas de higiene para evitar la propagación de la enfermedad')
             canvas.drawString(30, 540,
-                              ' con el animal infectado, uso de desinfectantes). Por desgracia, el tratamiento no siempre es eficaz. ')
+                              'del animal infectado con el uso de desinfectantes. Por desgracia, el tratamiento no siempre es eficaz.')
             canvas.drawString(30, 530,
                               'Llevarlo al veterinario, es muy importante, cuando se haya curado, hay que seguir yendo al veterinario ')
             canvas.drawString(30, 520, 'para que revise el estado y lleve un control de su salud.')
@@ -256,24 +256,19 @@ def crearpdf():
             canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:PROBLEMAS URINARIOS')
 
             canvas.drawString(30, 630,
-                              'La rabia no tiene tratamiento. Actúa de manera rápida y es letal para los gatos, por este motivo, si tu gato ')
+                              'El tratamiento generalmente se centra en la reducción de la progresión de la enfermedad y la mejoría')
             canvas.drawString(30, 620,
-                              'ha sido infectado, lo primero que hará tu veterinario será aislarlo para evitar que contagie a otros felinos.')
+                              'de vida para el paciente. Las mascotas, en algunos casos, pueden tener una buena calidad de vida')
             canvas.drawString(30, 610,
-                              'Dependiendo del avance de la enfermedad, la eutanasia del gato es la única opción.')
+                              'durante muchos años después de ser diagnosticadas con insuficiencia renal.')
             canvas.drawString(30, 590,
                               'Por este motivo es muy importante la prevención, puesto que es la única manera de proteger a nuestros ')
             canvas.drawString(30, 580,
-                              'gatos frente a esta enfermedad.')
+                              'perros frente a esta enfermedad.')
             canvas.drawString(30, 560,
-                              'La vacuna antirrábica es el único método de prevención real de la rabia. La primera dosis se aplica ')
+                              'Su médico veterinario evaluará su mascota y discutirá los mejores métodos de tratamiento con usted. ')
             canvas.drawString(30, 550,
                               'a los tres meses de edad y luego se aplican refuerzos anuales. De forma general se vacuna de forma  ')
-            canvas.drawString(30, 540,
-                              'periódica a los perros pero no a los gatos, por ello debes considerar si tu gato está expuesto a zonas ')
-            canvas.drawString(30, 530,
-                              'de riesgo o si entra en contacto animales salvajes. Si es así, lo más conveniente es seguir el calendario ')
-            canvas.drawString(30, 520, 'de vacunación felino.')
 
             canvas.line(20, 50, 580, 50)
             canvas.save()
@@ -291,20 +286,20 @@ def crearpdf():
             canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:PROBLEMAS DIGESTIVOS')
 
             canvas.drawString(30, 630,
-                              'No existe tratamiento propio ya que ningún medicamento elimina el virus, la medicación está centrada en ')
+                              'Lo principal a la hora de prevenir trastornos gastrointestinales en perros es ofrecer siempre ')
             canvas.drawString(30, 620,
-                              'reducir los síntomas que padece y ayudarle a que poco a poco expulse el virus del moquillo. ')
+                              'una alimentación de calidad y adaptada a las necesidades de cada perro. ')
             canvas.drawString(30, 610,
-                              'Superados los 5 días sus probabilidades de sobrevivir aumentan considerablemente.')
+                              'Por otro lado, es muy importante mantener una atenta vigilancia para evitar que nuestro perro ')
             canvas.drawString(30, 590,
-                              'La prevención es fundamental para evitar que nuestro gato sufra el virus del moquillo.')
+                              'ingiera algo que pueda dañar su salud.')
             canvas.drawString(30, 580,
-                              'Los gatitos bebés recibirán de la leche materna una especie de inmunidad que durará como mucho ')
-            canvas.drawString(30, 570, 'unas 12 semanas. ')
+                              'En el caso de los cachorros, que muestran una mayor conducta exploratoria, ')
+            canvas.drawString(30, 570, 'hay que tener especial cuidado. Si es necesario, se puede recurrir al uso del bozal ')
             canvas.drawString(30, 550,
-                              'Existen vacunas que ofrecen protección ante este virus, por ese motivo, si nuestro gato está al día de ')
+                              'durante los paseos mientras se aborda el problema con la ayuda de un etólogo o ')
             canvas.drawString(30, 540,
-                              'sus visitas y cuidados veterinarios no debemos preocuparnos de que sufra este problema')
+                              'educador canino profesional.')
 
             canvas.line(20, 50, 580, 50)
             canvas.save()
@@ -319,8 +314,8 @@ def abrirventana2():
     win.configure(background='dark turquoise')
     e3=tk.Label(win,text="Bienvenido Salud Animal CRYP")
     e3.pack(padx=5,pady=5,ipadx=5,ipady=5,fill=tk.X)
-    boton3=Button(win,text='OK',command=win.destroy)
-    boton3.pack(side=tk.TOP)
+    boton3=Button(win,text='FINALIZAR',command=win.destroy).place(x=80, y=80)
+    boton4=Button(win,text='Imprimir',command=crearpdf).place(x=120,y=80)
 
 def cerrarVentana():
     ventana.destroy()
@@ -381,6 +376,7 @@ def operacion():
     global mascota
     global edad
     global peso
+
     if opcion.get()==1:
         mascota="Gato"
         print("Ha elegido gato")
@@ -397,7 +393,7 @@ def operacion():
 
         etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
         ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
-        boton = Button(ventana, text="Enviar Resultados", command=crearpdf, bg=colorFondo, font=Hefont).place(x=20,y=370)
+        boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20,y=370)
         boton2 = Button(ventana, text="Ver enfermedad", command=mostrarEnfermedad, bg=colorFondo, font=Hefont).place(x=160,y=370)
         opciones = combo.get()
 
@@ -418,7 +414,7 @@ def operacion():
         combo.current(0)
         etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
         ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
-        boton = Button(ventana, text="Enviar Resultados", command=crearpdf, bg=colorFondo, font=Hefont).place(x=20,
+        boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20,
                                                                                                                    y=370)
         boton2 = Button(ventana, text="Ver enfermedad", command=mostrarEnfermedad, bg=colorFondo, font=Hefont).place(x=160,
                                                                                                                  y=370)
