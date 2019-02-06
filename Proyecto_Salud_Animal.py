@@ -311,11 +311,11 @@ def abrirventana2():
     ventana.withdraw()
     win=tk.Toplevel()
     win.geometry('380x300')
-    win.configure(background='dark turquoise')
-    e3=tk.Label(win,text="Bienvenido Salud Animal CRYP")
+    win.configure(background='White')
+    e3=tk.Label(win,text="Bienvenido Salud Animal",bg=colorFondo, font=Helfont)
     e3.pack(padx=5,pady=5,ipadx=5,ipady=5,fill=tk.X)
-    boton3=Button(win,text='FINALIZAR',command=win.destroy).place(x=80, y=80)
-    boton4=Button(win,text='Imprimir',command=crearpdf).place(x=120,y=80)
+    boton3=Button(win,text='FINALIZAR',command=win.destroy,bg=colorFondo, font=Helfont).place(x=100, y=80)
+    boton4=Button(win,text='GENERAR PDF',command=crearpdf,bg=colorFondo, font=Helfont).place(x=200,y=80)
 
 def cerrarVentana():
     ventana.destroy()
