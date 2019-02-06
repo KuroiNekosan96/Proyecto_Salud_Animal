@@ -2,11 +2,139 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk,Image
 from tkinter import font
-from reportlab.lib.pagesizes import A4, letter
 from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import A4, letter
+
 import time
 import tkinter as tk
+
+def crearpdf():
+    from reportlab.pdfgen import canvas
+    opciones = combo.get()
+    palabra = opciones[0]
+    print(opciones)
+    # --------Encabezado...... PDF..............
+
+    canvas = canvas.Canvas("form3.pdf", pagesize=letter)
+    canvas.setLineWidth(.3)
+    canvas.setFont('Helvetica', 12)
+
+    canvas.drawString(270, 750, 'SALUD ANIMAL')
+    canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+    canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+    canvas.line(500, 715, 585, 715)
+    canvas.drawString(30, 690, 'Telefono: 2345678')
+    if opcion.get()==1:
+        if palabra == '1':
+            canvas.drawString(220, 670, 'DETALLES DE LA MEDICACIÓN:OTITIS')
+
+            canvas.drawString(30, 630,
+                              'La prevención es el mejor tratamiento para hacer frente a la otitis. Sigue los sencillos consejos que ')
+            canvas.drawString(30, 620,
+                              'explicamos a continuación y libera a tu querida mascota de una enfermedad molesta y dolorosa para ella:')
+            canvas.drawString(30, 600,
+                              '-Evita que le entre agua o jabón en el oído en el momento del baño y sécale bien las orejas.')
+            canvas.drawString(30, 590,
+                              '-Retira el pelo que tiene alrededor de la oreja y depila los pelos del canal auditivo.')
+            canvas.drawString(30, 580,
+                              '-Limpia sus oídos con productos indicados para ese uso cada dos semanas aproximadamente.')
+            canvas.drawString(30, 560,
+                              'Tanto en los perros como en los gatos, el tratamiento para la otitis externa o media implica la limpieza ')
+            canvas.drawString(30, 550,
+                              'completa del oído externo, su secado completo y una aplicación tópica según cuál sea el causante de este')
+            canvas.drawString(30, 540,
+                              ' problema: cuerpo extraño, bacterias, hongos, ectoparásitos… La duración del tratamiento lo indicará el ')
+            canvas.drawString(30, 530,
+                              'veterinario, es muy importante llevarla a cabo y, cuando se haya curado, hay que seguir yendo al veterinario ')
+            canvas.drawString(30, 520, 'para que revise el estado de sus oídos y lleve un control de su salud.')
+            canvas.drawString(30, 500, 'SE RECOMIENDA USAR: Otocan Limpiador de oídos Bote de 125 ml')
+            canvas.drawString(30, 490, 'Dosificación:')
+            canvas.drawString(30, 470, '-Aplica la dosis de producto indicada en cada oído.')
+            canvas.drawString(30, 460,
+                              '-Masajea la base de la oreja para que se impregne bien todo el canal y se disuelva la cera.')
+            canvas.drawString(30, 450,
+                              '-Retira la suciedad con la ayuda de una gasa y tu dedo. No utilices bastoncillos.')
+            canvas.drawString(30, 440, '-Puedes repetir el proceso si es necesario.')
+            canvas.drawString(30, 420, 'Dosis:2,5 ml en cada oído')
+            canvas.line(20, 50, 580, 50)
+            canvas.save()
+            # ...............-------------------------.................................
+        elif palabra == '2':
+
+            canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:CONJUTIVITIS')
+
+            canvas.drawString(30, 630,
+                              '-Limpia sus ojos con una gasa estéril impregnada en suero fisiológico. Así evitarás que se acumulen ')
+            canvas.drawString(30, 620,
+                              'legañas y que la situación pueda empeorar')
+            canvas.drawString(30, 600,
+                              '-Puedes utilizar infusión de manzanilla fría para calmar el picor.También puede servir una infusión de ')
+            canvas.drawString(30, 590,
+                              'granos de granada.Aplícala con una gasa estéril.')
+            canvas.drawString(30, 580,
+                              '-Las gotas de lágrima artificial también pueden ser de gran ayuda. Echa una gota en cada ojo y cúbrelos ')
+            canvas.drawString(30, 570,
+                              'con paños impregnados en agua tibia ')
+            canvas.drawString(30, 560,
+                              '-Recorta lo máximo posible el pelo de alrededor de los ojos. ¡Ten cuidado de no hacerle daño! Si no te ')
+            canvas.drawString(30, 550,
+                              'sientes seguro de poder hacerlo, puedes llevar a tu gato a un profesional.')
+            canvas.drawString(30, 520,
+                              'Repite el procedimiento que elijas varias veces al día y ¡recuerda! Usa siempre una gasa limpia para cada ')
+            canvas.drawString(30, 510,
+                              'ojo o podrías pasar la infección de uno a otro. Estos remedios caseros pueden ayudar a paliar síntomas,')
+            canvas.drawString(30, 500,
+                              'pero no servirán para curar la conjuntivitis en gatos. Ir al veterinario es muy importante.')
+            canvas.line(20, 50, 580, 50)
+            canvas.save()
+        elif palabra == '3':
+
+            canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:RABIA')
+
+            canvas.drawString(30, 630,
+                              'La rabia no tiene tratamiento. Actúa de manera rápida y es letal para los gatos, por este motivo, si tu gato ')
+            canvas.drawString(30, 620,
+                              'ha sido infectado, lo primero que hará tu veterinario será aislarlo para evitar que contagie a otros felinos.')
+            canvas.drawString(30, 610,
+                              'Dependiendo del avance de la enfermedad, la eutanasia del gato es la única opción.')
+            canvas.drawString(30, 590,
+                              'Por este motivo es muy importante la prevención, puesto que es la única manera de proteger a nuestros ')
+            canvas.drawString(30, 580,
+                              'gatos frente a esta enfermedad.')
+            canvas.drawString(30, 560,
+                              'La vacuna antirrábica es el único método de prevención real de la rabia. La primera dosis se aplica ')
+            canvas.drawString(30, 550,
+                              'a los tres meses de edad y luego se aplican refuerzos anuales. De forma general se vacuna de forma  ')
+            canvas.drawString(30, 540,
+                              'periódica a los perros pero no a los gatos, por ello debes considerar si tu gato está expuesto a zonas ')
+            canvas.drawString(30, 530,
+                              'de riesgo o si entra en contacto animales salvajes. Si es así, lo más conveniente es seguir el calendario ')
+            canvas.drawString(30, 520, 'de vacunación felino.')
+
+            canvas.line(20, 50, 580, 50)
+            canvas.save()
+
+        elif palabra == '4':
+            canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:PANLEUCOPENIA FELINA')
+
+            canvas.drawString(30, 630,
+                              'No existe tratamiento propio ya que ningún medicamento elimina el virus, la medicación está centrada en ')
+            canvas.drawString(30, 620,
+                              'reducir los síntomas que padece y ayudarle a que poco a poco expulse el virus del moquillo. ')
+            canvas.drawString(30, 610,
+                              'Superados los 5 días sus probabilidades de sobrevivir aumentan considerablemente.')
+            canvas.drawString(30, 590,
+                              'La prevención es fundamental para evitar que nuestro gato sufra el virus del moquillo.')
+            canvas.drawString(30, 580,
+                              'Los gatitos bebés recibirán de la leche materna una especie de inmunidad que durará como mucho ')
+            canvas.drawString(30, 570, 'unas 12 semanas. ')
+            canvas.drawString(30, 550,
+                              'Existen vacunas que ofrecen protección ante este virus, por ese motivo, si nuestro gato está al día de ')
+            canvas.drawString(30, 540,
+                              'sus visitas y cuidados veterinarios no debemos preocuparnos de que sufra este problema')
+
+            canvas.line(20, 50, 580, 50)
+            canvas.save()
 
 
 def abrirventana2():
@@ -62,12 +190,12 @@ def mostrarEnfermedad():
         etiqueta6 = Label(ventana3,text="Problemas digestivos: Es una clasificación un poco general, pero los vómitos y la diarrea son una de las causas más frecuentes de visita al veterinario.").place(x=80, y=260)
 
 
-    palabra=opciones[0]
-    print(opciones)
+
 
 
     ventana3.mainloop()
 #Metodo para guardar variables falta la del combo
+
 def guardar():
     animal=opcion.get();
     peso=r.get();
@@ -92,7 +220,7 @@ def operacion():
 
         etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
         ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
-        boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20,y=370)
+        boton = Button(ventana, text="Enviar Resultados", command=crearpdf, bg=colorFondo, font=Hefont).place(x=20,y=370)
         boton2 = Button(ventana, text="Ver enfermedad", command=mostrarEnfermedad, bg=colorFondo, font=Hefont).place(x=160,y=370)
         opciones = combo.get()
 
@@ -127,23 +255,7 @@ def operacion():
         print("Ha elegido Hamster")
 
 
-#--------Encabezado...... PDF..............
-canvas = canvas.Canvas("form.pdf", pagesize=letter)
-canvas.setLineWidth(.3)
-canvas.setFont('Helvetica', 12)
 
-canvas.drawString(270, 750, 'SALUD ANIMAL')
-canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
-canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
-canvas.line(500, 715, 585, 715)
-canvas.drawString(30, 690, 'Telefono: 2345678')
-
-canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:')
-
-canvas.line(20, 50, 580, 50)
-
-canvas.save()
-#...............-------------------------.................................
 
 #Aqui inicia la interfaz
 #Variables Globales
@@ -159,9 +271,8 @@ edad=IntVar()
 opciones=StringVar()
 palabra=StringVar()
 mascota=StringVar()
-
+medicacion=StringVar()
 #Aqui inicia para la barra de herramientas
-
 
 ventana.title("Salud Animal CRYP")
 ventana.geometry("830x400")
