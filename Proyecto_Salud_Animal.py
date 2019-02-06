@@ -36,7 +36,7 @@ def crearpdf():
 
 
             canvas.drawString(30, 550,
-                              'La prevención es el mejor tratamiento para hacer frente a la otitis. Sigue los sencillos consejos que ')
+                              'La prevención es el mejor tratamiento para hacer frente a la otitis.Sigue los sencillos consejos que ')
             canvas.drawString(30, 540,
                               'explicamos a continuación y libera a tu querida mascota de una enfermedad molesta y dolorosa para ella:')
             canvas.drawString(30, 530,
