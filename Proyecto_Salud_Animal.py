@@ -26,36 +26,43 @@ def crearpdf():
             canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
             canvas.line(500, 715, 585, 715)
             canvas.drawString(30, 690, 'Telefono: 2345678')
-            canvas.drawString(220, 670, 'DETALLES DE LA MEDICACIÓN:OTITIS')
 
-            canvas.drawString(30, 630,
-                              'La prevención es el mejor tratamiento para hacer frente a la otitis. Sigue los sencillos consejos que ')
-            canvas.drawString(30, 620,
-                              'explicamos a continuación y libera a tu querida mascota de una enfermedad molesta y dolorosa para ella:')
-            canvas.drawString(30, 600,
-                              '-Evita que le entre agua o jabón en el oído en el momento del baño y sécale bien las orejas.')
-            canvas.drawString(30, 590,
-                              '-Retira el pelo que tiene alrededor de la oreja y depila los pelos del canal auditivo.')
-            canvas.drawString(30, 580,
-                              '-Limpia sus oídos con productos indicados para ese uso cada dos semanas aproximadamente.')
-            canvas.drawString(30, 560,
-                              'Tanto en los perros como en los gatos, el tratamiento para la otitis externa o media implica la limpieza ')
+            canvas.drawString(30, 660, "Tipo de Animal: " + mascota)
+            canvas.drawString(30, 630, "Edad del Animal: " + str(edad.get()))
+
+            canvas.drawString(30, 600, "Peso del Animal: " + str(peso.get()))
+
+            canvas.drawString(220, 570, 'DETALLES DE LA MEDICACIÓN:OTITIS')
+
+
             canvas.drawString(30, 550,
-                              'completa del oído externo, su secado completo y una aplicación tópica según cuál sea el causante de este')
+                              'La prevención es el mejor tratamiento para hacer frente a la otitis. Sigue los sencillos consejos que ')
             canvas.drawString(30, 540,
-                              ' problema: cuerpo extraño, bacterias, hongos, ectoparásitos… La duración del tratamiento lo indicará el ')
+                              'explicamos a continuación y libera a tu querida mascota de una enfermedad molesta y dolorosa para ella:')
             canvas.drawString(30, 530,
+                              '-Evita que le entre agua o jabón en el oído en el momento del baño y sécale bien las orejas.')
+            canvas.drawString(30, 520,
+                              '-Retira el pelo que tiene alrededor de la oreja y depila los pelos del canal auditivo.')
+            canvas.drawString(30, 510,
+                              '-Limpia sus oídos con productos indicados para ese uso cada dos semanas aproximadamente.')
+            canvas.drawString(30, 500,
+                              'Tanto en los perros como en los gatos, el tratamiento para la otitis externa o media implica la limpieza ')
+            canvas.drawString(30, 490,
+                              'completa del oído externo, su secado completo y una aplicación tópica según cuál sea el causante de este')
+            canvas.drawString(30, 480,
+                              ' problema: cuerpo extraño, bacterias, hongos, ectoparásitos… La duración del tratamiento lo indicará el ')
+            canvas.drawString(30, 470,
                               'veterinario, es muy importante llevarla a cabo y, cuando se haya curado, hay que seguir yendo al veterinario ')
-            canvas.drawString(30, 520, 'para que revise el estado de sus oídos y lleve un control de su salud.')
-            canvas.drawString(30, 500, 'SE RECOMIENDA USAR: Otocan Limpiador de oídos Bote de 125 ml')
-            canvas.drawString(30, 490, 'Dosificación:')
-            canvas.drawString(30, 470, '-Aplica la dosis de producto indicada en cada oído.')
-            canvas.drawString(30, 460,
+            canvas.drawString(30, 460, 'para que revise el estado de sus oídos y lleve un control de su salud.')
+            canvas.drawString(30, 450, 'SE RECOMIENDA USAR: Otocan Limpiador de oídos Bote de 125 ml')
+            canvas.drawString(30, 440, 'Dosificación:')
+            canvas.drawString(30, 430, '-Aplica la dosis de producto indicada en cada oído.')
+            canvas.drawString(30, 420,
                               '-Masajea la base de la oreja para que se impregne bien todo el canal y se disuelva la cera.')
-            canvas.drawString(30, 450,
+            canvas.drawString(30, 410,
                               '-Retira la suciedad con la ayuda de una gasa y tu dedo. No utilices bastoncillos.')
-            canvas.drawString(30, 440, '-Puedes repetir el proceso si es necesario.')
-            canvas.drawString(30, 420, 'Dosis:2,5 ml en cada oído')
+            canvas.drawString(30, 400, '-Puedes repetir el proceso si es necesario.')
+            canvas.drawString(30, 390, 'Dosis:2,5 ml en cada oído')
             canvas.line(20, 50, 580, 50)
             canvas.save()
             # ...............-------------------------.................................
@@ -371,7 +378,9 @@ def guardar():
 
 
 def operacion():
-
+    global mascota
+    global edad
+    global peso
     if opcion.get()==1:
         mascota="Gato"
         print("Ha elegido gato")
