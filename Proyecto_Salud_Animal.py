@@ -15,17 +15,18 @@ def crearpdf():
     print(opciones)
     # --------Encabezado...... PDF..............
 
-    canvas = canvas.Canvas("form3.pdf", pagesize=letter)
-    canvas.setLineWidth(.3)
-    canvas.setFont('Helvetica', 12)
 
-    canvas.drawString(270, 750, 'SALUD ANIMAL')
-    canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
-    canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
-    canvas.line(500, 715, 585, 715)
-    canvas.drawString(30, 690, 'Telefono: 2345678')
     if opcion.get()==1:
         if palabra == '1':
+            canvas = canvas.Canvas("form3.pdf", pagesize=letter)
+            canvas.setLineWidth(.3)
+            canvas.setFont('Helvetica', 12)
+
+            canvas.drawString(270, 750, 'SALUD ANIMAL')
+            canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+            canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+            canvas.line(500, 715, 585, 715)
+            canvas.drawString(30, 690, 'Telefono: 2345678')
             canvas.drawString(220, 670, 'DETALLES DE LA MEDICACIÓN:OTITIS')
 
             canvas.drawString(30, 630,
@@ -60,6 +61,15 @@ def crearpdf():
             canvas.save()
             # ...............-------------------------.................................
         elif palabra == '2':
+            canvas = canvas.Canvas("form3.pdf", pagesize=letter)
+            canvas.setLineWidth(.3)
+            canvas.setFont('Helvetica', 12)
+
+            canvas.drawString(270, 750, 'SALUD ANIMAL')
+            canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+            canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+            canvas.line(500, 715, 585, 715)
+            canvas.drawString(30, 690, 'Telefono: 2345678')
 
             canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:CONJUTIVITIS')
 
@@ -88,6 +98,15 @@ def crearpdf():
             canvas.line(20, 50, 580, 50)
             canvas.save()
         elif palabra == '3':
+            canvas = canvas.Canvas("form3.pdf", pagesize=letter)
+            canvas.setLineWidth(.3)
+            canvas.setFont('Helvetica', 12)
+
+            canvas.drawString(270, 750, 'SALUD ANIMAL')
+            canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+            canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+            canvas.line(500, 715, 585, 715)
+            canvas.drawString(30, 690, 'Telefono: 2345678')
 
             canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:RABIA')
 
@@ -115,6 +134,15 @@ def crearpdf():
             canvas.save()
 
         elif palabra == '4':
+            canvas = canvas.Canvas("form3.pdf", pagesize=letter)
+            canvas.setLineWidth(.3)
+            canvas.setFont('Helvetica', 12)
+
+            canvas.drawString(270, 750, 'SALUD ANIMAL')
+            canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+            canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+            canvas.line(500, 715, 585, 715)
+            canvas.drawString(30, 690, 'Telefono: 2345678')
             canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:PANLEUCOPENIA FELINA')
 
             canvas.drawString(30, 630,
