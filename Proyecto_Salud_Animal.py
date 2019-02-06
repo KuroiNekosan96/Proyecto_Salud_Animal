@@ -370,13 +370,24 @@ def mostrarManual():
     ventana2 = Tk()
     ventana2.title("Salud Animal CRYP-Manual de Uso")
     ventana2.geometry("370x370")
-    etiqueta2 = Label(ventana2, text="1.-Elegir una entre las cuatro opciones").place(x=80, y=80)
+    etiqueta2 = Label(ventana2, text="1.-Elegir una entre las dos opciones").place(x=80, y=80)
     etiqueta3 = Label(ventana2, text="2.-Dar Clic en aceptar, se desplegará más opciones").place(x=80, y=120)
     etiqueta4 = Label(ventana2, text="3.-Ingresar el peso de la mascota en gramos").place(x=80, y=160)
     etiqueta5 = Label(ventana2, text="4.-Elegir una de las enfermedades especificadas").place(x=80, y=200)
-    etiqueta6 = Label(ventana2, text="5.-Ingresar la edad del perro").place(x=80, y=240)
-    etiqueta7 = Label(ventana2, text="6.-Dar clic en enviar resultados").place(x=80, y=280)
+    etiqueta6 = Label(ventana2, text="5.-Ingresar la edad de la mascota").place(x=80, y=240)
+    etiqueta7 = Label(ventana2, text="6.-Dar clic en enviar resultados o generar PDF").place(x=80, y=280)
     ventana2.mainloop()
+
+def mostrarequipo():
+        ventana4 = Tk()
+        ventana4.title("EQUIPO DE TRABAJO")
+        ventana4.geometry("370x370")
+        etiqueta2 = Label(ventana4, text="MISAEL CABASCANGO").place(x=80, y=80)
+        etiqueta3 = Label(ventana4, text="FABIAN ROCHINA").place(x=80, y=120)
+        etiqueta4 = Label(ventana4, text="DORIVA PICHAMBA").place(x=80, y=160)
+        etiqueta5 = Label(ventana4, text="JEFFERSON YANQUI").place(x=80, y=200)
+
+        ventana4.mainloop()
 
 def mostrarEnfermedad():
     ventana3 = Tk()
@@ -492,6 +503,7 @@ ventana.geometry("830x400")
 ventana.maxsize(height=400,width=830)
 #Código para cargar imagen utilizando Pil
 img = ImageTk.PhotoImage(Image.open("fondoanimal.jpg"))
+#img = ImageTk.PhotoImage(Image.open("perro.jpg"))
 l=Label(image=img)
 l.pack()
 
@@ -500,6 +512,7 @@ l.pack()
 menubar=Menu(ventana)
 filemenu=Menu(menubar,tearoff=0)
 filemenu1=Menu(menubar,tearoff=0)
+filemenu3=Menu(menubar,tearoff=0)
 menubar.add_cascade(label="Menú",men=filemenu)
 filemenu.add_command(label="New",command=newFile)
 filemenu.add_command(label="Exit",command=ventana.quit)
@@ -507,6 +520,8 @@ filemenu.add_command(label="Exit",command=ventana.quit)
 menubar.add_cascade(label="Informacion",men=filemenu1)
 filemenu1.add_command(label="Manual",command=mostrarManual)
 
+menubar.add_cascade(label="Desarrolladores",men=filemenu3)
+filemenu3.add_command(label="ver",command=mostrarequipo)
 
 colorFondo="White"
 Helvfont=font.Font(family="Helvetica",size=30,weight="bold")
