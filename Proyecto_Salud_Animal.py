@@ -40,6 +40,33 @@ def mostrarManual():
     etiqueta7 = Label(ventana2, text="6.-Dar clic en enviar resultados").place(x=80, y=280)
     ventana2.mainloop()
 
+def mostrarEnfermedad():
+    ventana3 = Tk()
+    ventana3.title("Salud Animal CRYP-Enfermedad")
+    ventana3.geometry("1000x370")
+    opciones=combo.get()
+    if opcion.get()==1:
+        etiqueta2 = Label(ventana3,
+                          text="Otitis: Es una inflamación del conducto auditivo muy común en los perros, pero también en los gatitos y en los gatos adultos").place(
+            x=80, y=80)
+        etiqueta3 = Label(ventana3, text="Conjuntivitis: Es uno de los problemas más frecuentes en los gatos que se puede dar a cualquier edad. Se trata de la inflamación de la mucosa del ojo.").place(x=80, y=120)
+        etiqueta4 = Label(ventana3, text="El gato puede llegar a perder la vista si no se diagnostica y se trata a tiempo. ").place(x=80, y=140)
+        etiqueta5 = Label(ventana3, text="Rabia: Esta enfermedad causa un virus que se transmite a través de la saliva por la mordedura de un animal infectado.\n Se puede transmitir entre especies, de animales a humanos y viceversa\n").place(x=80, y=200)
+        etiqueta6 = Label(ventana3, text="Panleucopenia felina: omo moquillo felino, enteritis o gastroenteritis infecciosa. Es una enfermedad mortal provocada por un parvovirus y los síntomas").place(x=80, y=260)
+        etiqueta7 = Label(ventana3, text="más comunes son la fiebre y más adelante la hipotermia, los vómitos, la diarrea, la debilidad, la deshidratación, la anorexia y una importante bajada \nde los leucocitos y/o glóbulos blancos en la sangre.").place(x=80, y=280)
+    elif opcion.get()==2:
+        etiqueta2 = Label(ventana3,text="Moquillo: Esta enfermedad también es más grave en cachorros, tampoco tiene tratamiento específico.\nLos síntomas pueden ser respiratorios, digestivos o neurológicos en los casos más graves.").place(x=80, y=80)
+        etiqueta3 = Label(ventana3,text="Artrosis: Este problema es una inflamación y degeneración de las articulacionesque puede ser secundaria a muchos otros problemas. \nLos más frecuentes son la displasia de cadera, displasia de codo y la obesidad.").place(x=80, y=120)
+
+        etiqueta5 = Label(ventana3,text="Problemas urinarios: Los problemas urinarios son muy variados. El más común es la cistitis, más frecuente en animales mayores").place(x=80, y=200)
+        etiqueta6 = Label(ventana3,text="Problemas digestivos: Es una clasificación un poco general, pero los vómitos y la diarrea son una de las causas más frecuentes de visita al veterinario.").place(x=80, y=260)
+
+
+    palabra=opciones[0]
+    print(opciones)
+
+
+    ventana3.mainloop()
 #Metodo para guardar variables falta la del combo
 def guardar():
     animal=opcion.get();
@@ -49,29 +76,48 @@ def guardar():
 
 def operacion():
 
-
-
     if opcion.get()==1:
-        animal="Gato"
+        mascota="Gato"
         print("Ha elegido gato")
         colorFondo = "White"
         Helvifont = font.Font(family="Helvetica", size=10, weight="bold")
         r = Label(ventana, text="Peso de la mascota en Kg: ", bg=colorFondo, font=Helvifont).place(x=20, y=250)
         r1 = Entry(ventana, textvariable=peso, font=Helvifont).place(x=230, y=250)
         r2 = Label(ventana, text="Elija la enfermedad: ", bg=colorFondo, font=Helvifont).place(x=20, y=300)
-        combo = ttk.Combobox(ventana, state="readonly")
+
         r = ttk.Combobox(ventana)
         combo.place(x=230, y=300)
-        combo['values'] = (            'Seleccione', '1-Moquillo', '2-Rabia', '3-Gripe', '4-Desnutrucion', '5-Infección por Campylobacter',
-            '6-La toxoplasmosis', '7-La tiña')
+        combo['values'] = ( 'Seleccione', '1-Otitis', '2-Conjuntivitis', '3-Rabia', '4-Panleucopenia felina')
+        combo.current(0)
+
         etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
         ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
         boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20,y=370)
+        boton2 = Button(ventana, text="Ver enfermedad", command=mostrarEnfermedad, bg=colorFondo, font=Hefont).place(x=160,y=370)
+        opciones = combo.get()
+
         r.config(state=DISABLED)
 
     elif opcion.get()==2:
-        animal="Perro"
+        mascota="Perro"
         print("Ha elegido perro")
+        colorFondo = "White"
+        Helvifont = font.Font(family="Helvetica", size=10, weight="bold")
+        r3 = Label(ventana, text="Peso de la mascota en Kg: ", bg=colorFondo, font=Helvifont).place(x=20, y=250)
+        r4 = Entry(ventana, textvariable=peso, font=Helvifont).place(x=230, y=250)
+        r5 = Label(ventana, text="Elija la enfermedad: ", bg=colorFondo, font=Helvifont).place(x=20, y=300)
+
+        r = ttk.Combobox(ventana)
+        combo.place(x=230, y=300)
+        combo['values'] = ('Seleccione', '1-Moquillo', '2-Artrosis', '3-Problemas urinarios', '4-Problemas digestivos')
+        combo.current(0)
+        etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
+        ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
+        boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20,
+                                                                                                                   y=370)
+        boton2 = Button(ventana, text="Ver enfermedad", command=mostrarEnfermedad, bg=colorFondo, font=Hefont).place(x=160,
+                                                                                                                 y=370)
+        r.config(state=DISABLED)
 
     if opcion.get()==3:
         animal="Canario"
@@ -110,8 +156,9 @@ opcion=IntVar()
 num=IntVar()
 animal=IntVar()
 edad=IntVar()
-
-
+opciones=StringVar()
+palabra=StringVar()
+mascota=StringVar()
 
 #Aqui inicia para la barra de herramientas
 
@@ -141,15 +188,15 @@ colorFondo="White"
 Helvfont=font.Font(family="Helvetica",size=30,weight="bold")
 etiquetaTitulo = Label(ventana, text="Salud Animal",font=Helvfont,bg=colorFondo).place(x=120, y=10)
 
-
+combo = ttk.Combobox(ventana, state="readonly")
 
 Helfont=font.Font(family="Helvetica",size=10,weight="bold")
 
 etiqueta1=Label(ventana, text="Elige tu opción",bg=colorFondo,font=Helfont).place(x=20,y=80)
 xGato=Radiobutton(ventana, text="Gato", value=1, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=120)
 xPerro=Radiobutton(ventana, text="Perro", value=2, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=120)
-xTortugas=Radiobutton(ventana, text="Tortugas", value=3, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=150)
-xhamster=Radiobutton(ventana, text="Hamster", value=4, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=150)
+#xTortugas=Radiobutton(ventana, text="Tortugas", value=3, variable=opcion,bg=colorFondo,font=Helfont).place(x=20,y=150)
+#xhamster=Radiobutton(ventana, text="Hamster", value=4, variable=opcion,bg=colorFondo,font=Helfont).place(x=110,y=150)
 Hefont=font.Font(family="Helvetica",size=10,weight="bold")
 boton=Button(ventana,text="Aceptar",command=operacion,bg=colorFondo,font=Hefont).place(x=20,y=200)
 
