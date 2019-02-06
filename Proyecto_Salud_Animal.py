@@ -307,8 +307,8 @@ def abrirventana2():
     win.configure(background='dark turquoise')
     e3=tk.Label(win,text="Bienvenido Salud Animal CRYP")
     e3.pack(padx=5,pady=5,ipadx=5,ipady=5,fill=tk.X)
-    boton3=Button(win,text='OK',command=win.destroy)
-    boton3.pack(side=tk.TOP)
+    boton3=Button(win,text='FINALIZAR',command=win.destroy).place(x=80, y=80)
+    boton4=Button(win,text='Imprimir',command=crearpdf).place(x=120,y=80)
 
 def cerrarVentana():
     ventana.destroy()
@@ -383,7 +383,7 @@ def operacion():
 
         etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
         ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
-        boton = Button(ventana, text="Enviar Resultados", command=crearpdf, bg=colorFondo, font=Hefont).place(x=20,y=370)
+        boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20,y=370)
         boton2 = Button(ventana, text="Ver enfermedad", command=mostrarEnfermedad, bg=colorFondo, font=Hefont).place(x=160,y=370)
         opciones = combo.get()
 
@@ -404,7 +404,7 @@ def operacion():
         combo.current(0)
         etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
         ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
-        boton = Button(ventana, text="Enviar Resultados", command=crearpdf, bg=colorFondo, font=Hefont).place(x=20,
+        boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20,
                                                                                                                    y=370)
         boton2 = Button(ventana, text="Ver enfermedad", command=mostrarEnfermedad, bg=colorFondo, font=Hefont).place(x=160,
                                                                                                                  y=370)
