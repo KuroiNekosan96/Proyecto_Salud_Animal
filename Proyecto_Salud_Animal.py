@@ -15,7 +15,6 @@ def crearpdf():
     print(opciones)
     # --------Encabezado...... PDF..............
 
-
     if opcion.get()==1:
         if palabra == '1':
             canvas = canvas.Canvas("form3.pdf", pagesize=letter)
@@ -163,6 +162,147 @@ def crearpdf():
 
             canvas.line(20, 50, 580, 50)
             canvas.save()
+    elif opcion.get()==2:
+        if palabra == '1':
+            canvas = canvas.Canvas("form3.pdf", pagesize=letter)
+            canvas.setLineWidth(.3)
+            canvas.setFont('Helvetica', 12)
+
+            canvas.drawString(270, 750, 'SALUD ANIMAL')
+            canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+            canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+            canvas.line(500, 715, 585, 715)
+            canvas.drawString(30, 690, 'Telefono: 2345678')
+            canvas.drawString(220, 670, 'DETALLES DE LA MEDICACIÓN:MOQUILLO')
+
+            canvas.drawString(30, 630,
+                              'El virus causante no tiene tratamiento. Las infecciones bacterianas secundarias se pueden tratar ')
+            canvas.drawString(30, 620,
+                              'siendo también necesario el tratamiento de apoyo. El tratamiento necesario es el siguiente:')
+            canvas.drawString(30, 600,
+                              '-Tratamiento con antibióticos para controlar las infecciones bacterianas.')
+            canvas.drawString(30, 590,
+                              '-Medicación para controlar los síntomas, tales como diarrea, vómitos y tos, además de los neurológicos.')
+            canvas.drawString(30, 580,
+                              '-Intentar que el animal coma y beba (y si no, recurrir a fluidoterapia adecuada).')
+            canvas.drawString(30, 560,
+                              'Los perros infectados y los perros que hayan estado en contacto con ellos deben permanecer aislados de otros perros sensibles ')
+            canvas.drawString(30, 550,
+                              'y es preciso adoptar medidas de higiene para evitar la propagación de la enfermedad (cambio de ropa de las personas en contacto')
+            canvas.drawString(30, 540,
+                              ' con el animal infectado, uso de desinfectantes). Por desgracia, el tratamiento no siempre es eficaz. ')
+            canvas.drawString(30, 530,
+                              'Llevarlo al veterinario, es muy importante, cuando se haya curado, hay que seguir yendo al veterinario ')
+            canvas.drawString(30, 520, 'para que revise el estado y lleve un control de su salud.')
+            canvas.drawString(30, 500, 'SE RECOMIENDA USAR: Nobivac Puppy DP')
+            canvas.drawString(30, 490, 'Dosificación:')
+            canvas.drawString(30, 470, '-La vacuna se presenta liofilizada en viales de una dosis y contiene estabilizadores y trazas de antibióticos.')
+            canvas.drawString(30, 460,
+                              '-Inmunización activa de cachorros jóvenes contra el moquillo canino y la parvovirosis canina.')
+            canvas.drawString(30, 450,
+                              '-El contenido de un vial de vacuna reconstituida deberá inyectarse por vía subcutánea.')
+            canvas.drawString(30, 440, '-La vacuna deberá administrarse dentro de los 30 minutos posteriores a su reconstitución.')
+            canvas.drawString(30, 420, 'Dosis:1,0 ml de Nobivac® Diluyente. ')
+            canvas.save()
+            # ...............-------------------------.................................
+        elif palabra == '2':
+            canvas = canvas.Canvas("form3.pdf", pagesize=letter)
+            canvas.setLineWidth(.3)
+            canvas.setFont('Helvetica', 12)
+
+            canvas.drawString(270, 750, 'SALUD ANIMAL')
+            canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+            canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+            canvas.line(500, 715, 585, 715)
+            canvas.drawString(30, 690, 'Telefono: 2345678')
+
+            canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:ARTROSIS')
+
+            canvas.drawString(30, 630,
+                              '-Evitar el sobrepeso u obesidad. Este aspecto es especialmente importante durante su crecimiento, y al entrar ')
+            canvas.drawString(30, 620,
+                              'en la fase vital adulto-mayor.')
+            canvas.drawString(30, 600,
+                              '-Eliminar el ejercicio demasiado intenso en las fases de crecimiento, cuando los tejidos de las articulaciones aún ')
+            canvas.drawString(30, 590,
+                              'son tiernos y más susceptibles a sufrir daños que en los perros maduros.')
+            canvas.drawString(30, 580,
+                              '-Hacerle practicar ejercicio de forma regular, evitando que sea excesiva intensidad si no está entrenados')
+            canvas.drawString(30, 570,
+                              'previamente. ')
+            canvas.drawString(30, 560,
+                              'Llevarlo al veterinario, es muy importante, cuando se haya curado, hay que seguir yendo al veterinario ')
+            canvas.drawString(30, 550,
+                              'para que revise el estado y lleve un control de su salud.')
+            canvas.save()
+        elif palabra == '3':
+            canvas = canvas.Canvas("form3.pdf", pagesize=letter)
+            canvas.setLineWidth(.3)
+            canvas.setFont('Helvetica', 12)
+
+            canvas.drawString(270, 750, 'SALUD ANIMAL')
+            canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+            canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+            canvas.line(500, 715, 585, 715)
+            canvas.drawString(30, 690, 'Telefono: 2345678')
+
+            canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:PROBLEMAS URINARIOS')
+
+            canvas.drawString(30, 630,
+                              'La rabia no tiene tratamiento. Actúa de manera rápida y es letal para los gatos, por este motivo, si tu gato ')
+            canvas.drawString(30, 620,
+                              'ha sido infectado, lo primero que hará tu veterinario será aislarlo para evitar que contagie a otros felinos.')
+            canvas.drawString(30, 610,
+                              'Dependiendo del avance de la enfermedad, la eutanasia del gato es la única opción.')
+            canvas.drawString(30, 590,
+                              'Por este motivo es muy importante la prevención, puesto que es la única manera de proteger a nuestros ')
+            canvas.drawString(30, 580,
+                              'gatos frente a esta enfermedad.')
+            canvas.drawString(30, 560,
+                              'La vacuna antirrábica es el único método de prevención real de la rabia. La primera dosis se aplica ')
+            canvas.drawString(30, 550,
+                              'a los tres meses de edad y luego se aplican refuerzos anuales. De forma general se vacuna de forma  ')
+            canvas.drawString(30, 540,
+                              'periódica a los perros pero no a los gatos, por ello debes considerar si tu gato está expuesto a zonas ')
+            canvas.drawString(30, 530,
+                              'de riesgo o si entra en contacto animales salvajes. Si es así, lo más conveniente es seguir el calendario ')
+            canvas.drawString(30, 520, 'de vacunación felino.')
+
+            canvas.line(20, 50, 580, 50)
+            canvas.save()
+
+        elif palabra == '4':
+            canvas = canvas.Canvas("form3.pdf", pagesize=letter)
+            canvas.setLineWidth(.3)
+            canvas.setFont('Helvetica', 12)
+
+            canvas.drawString(270, 750, 'SALUD ANIMAL')
+            canvas.drawString(30, 720, 'Correo: saludanimal@hotmail.com')
+            canvas.drawString(500, 720, 'Fecha:' + time.strftime("%d/%m/%y"))
+            canvas.line(500, 715, 585, 715)
+            canvas.drawString(30, 690, 'Telefono: 2345678')
+            canvas.drawString(220, 660, 'DETALLES DE LA MEDICACIÓN:PROBLEMAS DIGESTIVOS')
+
+            canvas.drawString(30, 630,
+                              'No existe tratamiento propio ya que ningún medicamento elimina el virus, la medicación está centrada en ')
+            canvas.drawString(30, 620,
+                              'reducir los síntomas que padece y ayudarle a que poco a poco expulse el virus del moquillo. ')
+            canvas.drawString(30, 610,
+                              'Superados los 5 días sus probabilidades de sobrevivir aumentan considerablemente.')
+            canvas.drawString(30, 590,
+                              'La prevención es fundamental para evitar que nuestro gato sufra el virus del moquillo.')
+            canvas.drawString(30, 580,
+                              'Los gatitos bebés recibirán de la leche materna una especie de inmunidad que durará como mucho ')
+            canvas.drawString(30, 570, 'unas 12 semanas. ')
+            canvas.drawString(30, 550,
+                              'Existen vacunas que ofrecen protección ante este virus, por ese motivo, si nuestro gato está al día de ')
+            canvas.drawString(30, 540,
+                              'sus visitas y cuidados veterinarios no debemos preocuparnos de que sufra este problema')
+
+            canvas.line(20, 50, 580, 50)
+            canvas.save()
+
+
 
 
 def abrirventana2():
@@ -269,7 +409,7 @@ def operacion():
         combo.current(0)
         etiqueta2 = Label(ventana, text="Ingresar Edad de la mascota:", bg=colorFondo, font=Helfont).place(x=20, y=340)
         ed = Entry(ventana, textvariable=edad, font=Helvifont).place(x=230, y=340)
-        boton = Button(ventana, text="Enviar Resultados", command=abrirventana2, bg=colorFondo, font=Hefont).place(x=20,
+        boton = Button(ventana, text="Enviar Resultados", command=crearpdf, bg=colorFondo, font=Hefont).place(x=20,
                                                                                                                    y=370)
         boton2 = Button(ventana, text="Ver enfermedad", command=mostrarEnfermedad, bg=colorFondo, font=Hefont).place(x=160,
                                                                                                                  y=370)
